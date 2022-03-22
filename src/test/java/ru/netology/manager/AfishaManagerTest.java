@@ -1,22 +1,22 @@
 package ru.netology.manager;
 
 import org.junit.jupiter.api.Test;
-import ru.netology.domain.Films;
+import ru.netology.domain.Film;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class AfishaManagerTest {
-    Films first = new Films("Бладшот");
-    Films second = new Films("Вперед");
-    Films third = new Films("Отель");
-    Films fourth = new Films("Джентельмены");
-    Films fifth = new Films("Человек-невидимка");
-    Films sixth = new Films("Тролли");
-    Films seventh = new Films("Номер один");
-    Films eighth = new Films("Бэтмен");
-    Films ninth = new Films("Зверопой 2");
-    Films tenth = new Films("Человек-паук");
-    Films eleventh = new Films("Человек-паук 2");
+    Film first = new Film("Бладшот");
+    Film second = new Film("Вперед");
+    Film third = new Film("Отель");
+    Film fourth = new Film("Джентельмены");
+    Film fifth = new Film("Человек-невидимка");
+    Film sixth = new Film("Тролли");
+    Film seventh = new Film("Номер один");
+    Film eighth = new Film("Бэтмен");
+    Film ninth = new Film("Зверопой 2");
+    Film tenth = new Film("Человек-паук");
+    Film eleventh = new Film("Человек-паук 2");
 
     @Test
     void addNewFilm() {
@@ -34,8 +34,8 @@ class AfishaManagerTest {
         manager.addFilm(ninth);
         manager.addFilm(tenth);
 
-        Films[] expected = {first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth};
-        Films[] actual = manager.findAll();
+        Film[] expected = {first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth};
+        Film[] actual = manager.findAll();
 
         assertArrayEquals(expected, actual);
     }
@@ -54,9 +54,10 @@ class AfishaManagerTest {
         manager.addFilm(eighth);
         manager.addFilm(ninth);
         manager.addFilm(tenth);
+        manager.addFilm(eleventh);
 
-        Films[] expected = {tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
-        Films[] actual = manager.getAll();
+        Film[] expected = {eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
+        Film[] actual = manager.findLast();
         assertArrayEquals(expected, actual);
     }
 
@@ -75,8 +76,8 @@ class AfishaManagerTest {
         manager.addFilm(ninth);
         manager.addFilm(tenth);
 
-        Films[] expected = {tenth, ninth, eighth, seventh, sixth};
-        Films[] actual = manager.getAll();
+        Film[] expected = {tenth, ninth, eighth, seventh, sixth};
+        Film[] actual = manager.findLast();
         assertArrayEquals(expected, actual);
     }
 
@@ -96,8 +97,8 @@ class AfishaManagerTest {
         manager.addFilm(tenth);
         manager.addFilm(eleventh);
 
-        Films[] expected = {eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
-        Films[] actual = manager.getAll();
+        Film[] expected = {eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
+        Film[] actual = manager.findLast();
         assertArrayEquals(expected, actual);
     }
 
