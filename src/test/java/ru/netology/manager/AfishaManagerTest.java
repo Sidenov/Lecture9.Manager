@@ -61,6 +61,7 @@ class AfishaManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    // Тест если задано вывести меньше чем 10 фильмов
     @Test
     void getAllIf5Films() {
 
@@ -81,6 +82,7 @@ class AfishaManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    // Тест если задано вывести больше чем 10 фильмов
     @Test
     void getAllIf11Films() {
 
