@@ -104,4 +104,18 @@ class AfishaManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    void getAllIfLessFilmsThenAmountFilm() {
+
+        AfishaManager manager = new AfishaManager(8);
+        manager.addFilm(first);
+        manager.addFilm(second);
+        manager.addFilm(third);
+        manager.addFilm(fourth);
+        manager.addFilm(fifth);
+
+        Film[] expected = {fifth, fourth, third, second, first};
+        Film[] actual = manager.findLast();
+        assertArrayEquals(expected, actual);
+    }
 }

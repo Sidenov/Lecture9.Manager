@@ -28,17 +28,17 @@ public class AfishaManager {
     }
 
     public Film[] findLast() {
-        Film[] films = findAll();
-        int resultLenght = amountFilms;
-//        if (amountFilms > 10) {
-//            resultLenght = 10;
-//        } else {
-//            resultLenght = amountFilms;
-//        }
-        Film[] result = new Film[resultLenght];
+        Film[] film = findAll();
+        int resultLength;
+        if (amountFilms > film.length) {
+            resultLength = film.length;
+        } else {
+            resultLength = amountFilms;
+        }
+        Film[] result = new Film[resultLength];
         for (int i = 0; i < result.length; i++) {
-            int index = films.length - i - 1;
-            result[i] = films[index];
+            int index = film.length - i - 1;
+            result[i] = film[index];
         }
         return result;
     }
